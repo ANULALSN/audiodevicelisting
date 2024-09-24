@@ -2,3 +2,10 @@ sudo apt-get install libasound2-dev
 sudo apt-get install alsa-utils
 sudo apt-get install libudev-dev
 sudo apt-get install acpi
+//Use the gcc compiler to compile your program. Make sure to link it with the ALSA and udev libraries if you're using them for real-time event monitoring
+gcc -o audio_monitor list.c -lasound -ludev
+//Running
+./audio_monitor
+//If the program requires access to device management, you may need to run it with
+sudo ./audio_monitor
+
